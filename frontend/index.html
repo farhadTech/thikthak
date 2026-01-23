@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>ThikThak – Home Appliance Repair</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Tailwind CDN -->
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+
+  <body class="bg-gray-50 text-gray-800">
+    <!-- ================= NAVBAR ================= -->
+    <nav class="bg-white shadow sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
+          <!-- Logo -->
+          <a href="./index.html" class="flex items-center gap-2 group">
+            <!-- Logo Image -->
+            <img src="./images/thikthak logo.png" alt="ThikThak Logo"
+              class="h-10 w-auto transition-transform duration-300 group-hover:scale-110">
+
+            <div class="flex flex-col leading-none">
+              <!-- Top line -->
+              <span class="text-2xl font-bold text-blue-600
+    transition-all duration-300
+    group-hover:translate-x-1
+    group-hover:text-blue-700">
+                ThikThak
+              </span>
+
+              <!-- Bottom line aligned to right -->
+              <div class="justify-end">
+                <span class="text-sm font-semibold text-gray-500">
+                  .com
+                </span>
+              </div>
+            </div>
+          </a>
+
+          <!-- Desktop Menu -->
+          <ul class="hidden md:flex items-center space-x-8">
+            <!-- Menu Item -->
+            <li class="group">
+              <a href="./index.html" class="relative font-medium text-gray-700 hover:text-blue-600">
+                Home
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#services" class="relative font-medium text-gray-700 hover:text-blue-600">
+                Services
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#book" class="relative font-medium text-gray-700 hover:text-blue-600">
+                Book a Service
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#gallery" class="relative font-medium text-gray-700 hover:text-blue-600">
+                Gallery
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#about" class="relative font-medium text-gray-700 hover:text-blue-600">
+                About Us
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <li class="group">
+              <a href="#contact" class="relative font-medium text-gray-700 hover:text-blue-600">
+                Contact Us
+                <span class="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-600 transition-all group-hover:w-full"></span>
+              </a>
+            </li>
+
+            <!-- WhatsApp Button -->
+            <li>
+              <a href="https://wa.me/8801873972010" target="_blank"
+                class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition">
+                WhatsApp
+              </a>
+            </li>
+          </ul>
+
+          <!-- Mobile Menu Button -->
+          <button id="menuBtn" class="md:hidden text-gray-700 focus:outline-none">
+            ☰
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden bg-white shadow">
+        <ul class="flex flex-col px-6 py-4 space-y-4">
+          <li><a href="#home" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+          <li><a href="#services" class="block text-gray-700 hover:text-blue-600">Services</a></li>
+          <li><a href="#book" class="block text-gray-700 hover:text-blue-600">Book a Service</a></li>
+          <li><a href="#gallery" class="block text-gray-700 hover:text-blue-600">Gallery</a></li>
+          <li><a href="#about" class="block text-gray-700 hover:text-blue-600">About Us</a></li>
+          <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact Us</a></li>
+
+          <li>
+            <a href="https://wa.me/8801873972010" class="block bg-green-500 text-white text-center py-2 rounded-full">
+              WhatsApp
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ================= HERO SECTION ================= -->
+    <section class="relative bg-white text-gray-800 overflow-hidden">
+
+      <!-- Soft Background Blobs (subtle for white bg) -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-green-200 opacity-40 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-emerald-100 opacity-40 rounded-full blur-3xl"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-10 items-center">
+
+        <!-- Text Content -->
+        <div class="animate-fade-in-up">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6 text-gray-900">
+            Trusted Home Appliance Repair <br>
+            <span class="text-green-600">in Bangladesh</span>
+          </h1>
+
+          <p class="text-lg text-gray-600 mb-8">
+            Professional technicians, transparent pricing, and fast service
+            at your doorstep.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex gap-4">
+            <a href="#book" class="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold
+                 hover:bg-green-700 transition transform hover:-translate-y-1 shadow-lg">
+              Book Service
+            </a>
+
+            <a href="tel:+880123456789" class="border border-green-600 text-green-600 px-6 py-3 rounded-lg
+                 hover:bg-green-50 transition transform hover:-translate-y-1">
+              Call Now
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="flex gap-6 mt-10 text-sm text-gray-600">
+            <div class="flex items-center gap-1">✔ Verified Technicians</div>
+            <div class="flex items-center gap-1">✔ No Hidden Charges</div>
+            <div class="flex items-center gap-1">✔ 14-Day Warranty</div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="relative animate-fade-in-right">
+          <img src="./images/hero image.png" alt="Home Appliance Repair" class="w-full max-w-3xl mx-auto drop-shadow-xl
+               transform transition duration-500 hover:scale-105">
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ================= SERVICES SECTION ================= -->
+    <section id="services" class="bg-gray-50 py-20">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Services
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Reliable, transparent, and professional home appliance services in Dhaka.
+          </p>
+        </div>
+
+        <!-- Services Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <!-- Service Card -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+            <a href="#" class="block overflow-hidden">
+              <img src="./images/services/ac installation.jpg" alt="AC Installation"
+                class="w-full h-52 object-cover transition duration-500 group-hover:scale-110">
+            </a>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                AC Installation
+              </h3>
+
+              <!-- Rating -->
+              <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
+                ★★★★☆ <span class="text-gray-500 ml-1">(4.8)</span>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4">
+                Professional AC installation ensuring safety, efficiency, and long-term performance.
+              </p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">
+                  ৳1,500+
+                </span>
+
+                <a href="#book" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm
+                      hover:bg-green-700 transition">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- AC Repair & Shifting -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+            <a href="./ac-repair.html">
+              <img src="./images/services/ac repair.jpg"
+                class="w-full h-52 object-cover transition duration-500 group-hover:scale-110"
+                alt="AC Repair & Shifting">
+            </a>
+
+            <div class="p-6">
+              <a href="./ac-repair.html">
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                  AC Repair & Shifting
+                </h3>
+              </a>
+
+              <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
+                ★★★★☆ <span class="text-gray-500 ml-1">(4.7)</span>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4">
+                Expert diagnosis, gas refill, shifting, and repair by verified technicians.
+              </p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">
+                  ৳800+
+                </span>
+
+                <a href="#book" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Washing Machine -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+            <a href="#">
+              <img src="./images/services/washing machine repair.jpg"
+                class="w-full h-52 object-cover transition duration-500 group-hover:scale-110"
+                alt="Washing Machine Repair">
+            </a>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Washing Machine Repair
+              </h3>
+
+              <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
+                ★★★★☆ <span class="text-gray-500 ml-1">(4.6)</span>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4">
+                Top-load & front-load washing machine repair with genuine parts.
+              </p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">
+                  ৳700+
+                </span>
+
+                <a href="#book" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Microwave -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+            <a href="#">
+              <img src="./images/services/microwave repair.jpg"
+                class="w-full h-52 object-cover transition duration-500 group-hover:scale-110" alt="Microwave Repair">
+            </a>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Microwave Repair
+              </h3>
+
+              <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
+                ★★★★☆ <span class="text-gray-500 ml-1">(4.5)</span>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4">
+                Quick repair service for convection and solo microwave ovens.
+              </p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">
+                  ৳600+
+                </span>
+
+                <a href="#book" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kitchen Hood -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+            <a href="#">
+              <img src="./images/services/kitchen repair.jpg"
+                class="w-full h-52 object-cover transition duration-500 group-hover:scale-110"
+                alt="Kitchen Hood Repair">
+            </a>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Kitchen Hood Repair
+              </h3>
+
+              <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
+                ★★★★☆ <span class="text-gray-500 ml-1">(4.6)</span>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4">
+                Motor, filter cleaning, and suction repair for all hood types.
+              </p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">
+                  ৳500+
+                </span>
+
+                <a href="#book" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Electronics -->
+          <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition overflow-hidden group">
+            <a href="#">
+              <img src="./images/services/electronics repair.jpg"
+                class="w-full h-52 object-cover transition duration-500 group-hover:scale-110"
+                alt="Electrical & Electronics">
+            </a>
+
+            <div class="p-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                Electrical & Electronics
+              </h3>
+
+              <div class="flex items-center gap-1 text-yellow-400 text-sm mb-2">
+                ★★★★☆ <span class="text-gray-500 ml-1">(4.7)</span>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4">
+                Switch, wiring, fan, light, and electronic device repair service.
+              </p>
+
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-green-600">
+                  ৳400+
+                </span>
+
+                <a href="#book" class="bg-green-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-green-700">
+                  Book Now
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+
+      <div class="bg-white rounded-2xl p-8 max-w-sm text-center shadow-2xl animate-fade-in-up">
+        <h3 class="text-2xl font-bold text-green-600 mb-3">
+          Booking Confirmed ✅
+        </h3>
+        <p class="text-gray-600 mb-6">
+          Your service request has been sent. We will contact you shortly.
+        </p>
+        <button onclick="closeModal()"
+          class="bg-green-600 text-white px-6 py-2 rounded-full hover:bg-green-700 transition">
+          OK
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= BOOK A SERVICE SECTION ================= -->
+    <section id="book" class="relative bg-green-50 py-20 overflow-hidden">
+
+      <!-- Background Blobs -->
+      <div class="absolute -top-32 -left-32 w-96 h-96 bg-green-200 opacity-30 rounded-full blur-3xl animate-pulse">
+      </div>
+      <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-green-100 opacity-30 rounded-full blur-3xl animate-pulse">
+      </div>
+
+      <div class="relative max-w-4xl mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center mb-12 animate-fade-in-up">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Book a Service
+          </h2>
+          <p class="text-gray-700 max-w-2xl mx-auto">
+            Fill the form below and our verified technician will reach your doorstep quickly.
+          </p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 animate-fade-in-up">
+          <form id="bookingForm" class="grid gap-6">
+
+            <!-- Name -->
+            <input id="name" type="text" placeholder="Your Name" required
+              class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none transition">
+
+            <!-- Phone -->
+            <input id="phone" type="tel" placeholder="Phone Number" required
+              class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none transition">
+
+            <!-- Service Dropdown -->
+            <select id="service" required
+              class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none transition">
+              <option value="">Select Service</option>
+              <option>AC Installation</option>
+              <option>AC Repair & Shifting</option>
+              <option>Washing Machine Repair</option>
+              <option>Microwave Repair</option>
+              <option>Kitchen Hood Repair</option>
+              <option>Electrical & Electronics</option>
+              <option>TV & Home Gadgets</option>
+            </select>
+
+            <!-- Address -->
+            <textarea id="address" placeholder="Your Address" required rows="3"
+              class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none transition"></textarea>
+
+            <!-- Submit Button -->
+            <button type="submit"
+              class="cursor-pointer bg-green-600 text-white font-semibold px-6 py-3 rounded-xl shadow-lg hover:bg-green-700 hover:scale-105 transition transform">
+              Book Now
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALLERY SECTION ================= -->
+    <section id="gallery" class="bg-white py-20">
+      <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center mb-14">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Our Gallery
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            See our professional technicians in action and the quality of our work.
+          </p>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+          <!-- Gallery Item -->
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/ac cleaning.jpg" alt="AC Repair"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/washing machine.jpg" alt="Washing Machine Repair"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/back-view-man-touching-kitchen-appliance-hanging-wall.jpg" alt="Microwave Repair"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/side-view-man-working-as-plumber.jpg" alt="Kitchen Hood Repair"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/electrical repair.jpg" alt="Electrical & Electronics"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/installing-tv.jpg" alt="TV & Home Gadgets"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/ac installation and repair.jpg" alt="AC Installation"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+          <div class="overflow-hidden rounded-xl shadow-md group cursor-pointer">
+            <img src="./images/gallery/team.jpg" alt="Our Team"
+              class="w-full h-48 object-cover transition-transform duration-500 group-hover:scale-110">
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT US SECTION ================= -->
+    <section id="about" class="relative py-24 overflow-hidden">
+
+      <!-- Background Image -->
+      <div class="absolute inset-0">
+        <img src="./images/gallery/team.jpg" alt="ThikThak Team Background"
+          class="w-full h-full object-cover scale-110 blur-md" />
+        <div class="absolute inset-0 bg-white/70"></div>
+      </div>
+
+      <!-- Content -->
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="bg-white/80 backdrop-blur-xl rounded-3xl shadow-xl p-10 md:p-14
+             grid md:grid-cols-2 gap-12 items-center
+             animate-fade-in-up">
+
+          <!-- Text Content -->
+          <div>
+            <span class="text-blue-600 font-semibold uppercase tracking-wide">
+              About Us
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mt-3 mb-6">
+              Trusted Home Service Partner in Dhaka
+            </h2>
+
+            <p class="text-gray-600 leading-relaxed mb-4">
+              <strong>ThikThak.com</strong> is a professional home appliance and repair
+              service platform committed to delivering reliable, transparent, and
+              high-quality services right at your doorstep.
+            </p>
+
+            <p class="text-gray-600 leading-relaxed mb-6">
+              From AC installation and repair to washing machines, microwave ovens,
+              electrical and electronic services — our verified technicians ensure
+              hassle-free solutions with fair pricing and service warranty.
+            </p>
+
+            <!-- Features -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="flex items-center gap-3">
+                <span class="text-green-500 text-xl">✔</span>
+                <span class="text-gray-700 font-medium">No Hidden Charges</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="text-green-500 text-xl">✔</span>
+                <span class="text-gray-700 font-medium">14 Days Service Warranty</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="text-green-500 text-xl">✔</span>
+                <span class="text-gray-700 font-medium">Verified Technicians</span>
+              </div>
+
+              <div class="flex items-center gap-3">
+                <span class="text-green-500 text-xl">✔</span>
+                <span class="text-gray-700 font-medium">Fast & Reliable Support</span>
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <a href="#book" class="inline-block bg-blue-600 text-white px-6 py-3 rounded-full
+                 font-semibold hover:bg-blue-700 transition">
+              Book a Service
+            </a>
+          </div>
+          <!-- Right Side Image (Inside Content) -->
+          <div class="hidden md:block relative rounded-2xl overflow-hidden h-full">
+            <img src="./images/gallery/team.jpg" alt="ThikThak Team" class="w-full h-full object-cover" />
+            <!-- Soft overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- ================= CONTACT US SECTION ================= -->
+    <section id="contact" class="relative py-28 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
+
+      <!-- Decorative Blobs -->
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-blue-300/30 rounded-full blur-3xl animate-pulse"></div>
+      <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl animate-pulse"></div>
+
+      <div class="relative max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-14 items-center
+             animate-fade-in-up">
+
+          <!-- LEFT: INFO -->
+          <div>
+            <span class="text-blue-600 font-semibold uppercase tracking-wide">
+              Contact Us
+            </span>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-6">
+              Get in Touch With ThikThak
+            </h2>
+
+            <p class="text-gray-600 mb-8 leading-relaxed">
+              Have questions or need immediate service? Our support team is always ready
+              to help you. Reach out to us anytime and get professional assistance
+              at your doorstep.
+            </p>
+
+            <!-- Contact Items -->
+            <div class="space-y-5">
+              <div class="flex items-center gap-4">
+                <span class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">
+                  📞
+                </span>
+                <div>
+                  <p class="font-semibold text-gray-800">Phone</p>
+                  <p class="text-gray-600">+880 1234 567 890</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <span class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">
+                  📧
+                </span>
+                <div>
+                  <p class="font-semibold text-gray-800">Email</p>
+                  <p class="text-gray-600">support@thikthak.com</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4">
+                <span class="w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600 text-xl">
+                  📍
+                </span>
+                <div>
+                  <p class="font-semibold text-gray-800">Location</p>
+                  <p class="text-gray-600">Dhaka, Bangladesh</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: FORM -->
+          <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-10
+               animate-fade-in-up delay-200">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6">
+              Send Us a Message
+            </h3>
+
+            <form class="space-y-5">
+              <input type="text" placeholder="Your Name"
+                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+              <input type="email" placeholder="Your Email"
+                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+              <textarea rows="4" placeholder="Your Message"
+                class="w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
+
+              <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-semibold
+                   hover:bg-blue-700 transition">
+                Send Message
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ================= WHY CHOOSE US ================= -->
+    <section class="py-16">
+      <div class="max-w-7xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-12">Why Choose ThikThak</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow">✔ No Hidden Charges</div>
+          <div class="bg-white p-6 rounded-xl shadow">✔ 14-Day Service Warranty</div>
+          <div class="bg-white p-6 rounded-xl shadow">✔ Verified Technicians</div>
+          <div class="bg-white p-6 rounded-xl shadow">✔ Professional Tools</div>
+          <div class="bg-white p-6 rounded-xl shadow">✔ 24/7 Support</div>
+        </div>
+      </div>
+    </section>
+
+
+
+
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="bg-blue-50 py-16">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-10">Customer Reviews</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow">
+            ⭐⭐⭐⭐⭐
+            <p class="mt-2">“খুব ভালো সার্ভিস, সময়মতো কাজ করেছে।”</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow">
+            ⭐⭐⭐⭐⭐
+            <p class="mt-2">“Professional and trustworthy.”</p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow">
+            ⭐⭐⭐⭐⭐
+            <p class="mt-2">“AC servicing was excellent.”</p>
+          </div>
+        </div>
+
+        <p class="mt-6 font-semibold">Trusted by 10,000+ customers</p>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section">
+      <footer class="bg-gray-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+          <p>📞 Hotline: +880 1873972010</p>
+          <p class="mt-2">WhatsApp & Live Chat Available</p>
+        </div>
+      </footer>
+      </section>
+
+      <!-- ================= STICKY MOBILE CTA ================= -->
+      <a href="tel:+8801873972010"
+        class="fixed bottom-4 right-4 bg-green-500 text-white px-5 py-3 rounded-full shadow-lg">
+        Call Now
+      </a>
+  </body>
+
+  <!-- ================= MOBILE MENU SCRIPT ================= -->
+  <script>
+    var menuBtn = document.getElementById("menuBtn");
+    var mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", function () {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // ================= BOOKING FORM SCRIPT =================
+    document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const data = {
+        name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        service: document.getElementById("service").value,
+        address: document.getElementById("address").value
+      };
+
+      try {
+        const res = await fetch('http://localhost:3000/book-service', { // update URL if deployed
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+
+        const result = await res.json();
+
+        if (result.success) {
+          alert('Booking submitted successfully! Our technician will contact you.');
+          this.reset();
+
+          // Show success modal
+          const modal = document.getElementById("successModal");
+          modal.classList.remove("hidden");
+          modal.classList.add("flex");
+        } else {
+          alert('Failed to submit booking. Try again later.');
+        }
+      } catch (error) {
+        console.error(error);
+        alert('Something went wrong. Please try again.');
+      }
+    });
+
+    // Close success modal function
+    function closeModal () {
+      document.getElementById("successModal").classList.add("hidden");
+    }
+  </script>
+
+</html>
