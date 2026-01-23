@@ -623,8 +623,6 @@
     </section>
 
 
-
-
     <!-- ================= CONTACT US SECTION ================= -->
     <section id="contact" class="relative py-28 bg-gradient-to-br from-blue-50 to-white overflow-hidden">
 
@@ -715,9 +713,6 @@
     </section>
 
 
-
-
-
     <!-- ================= WHY CHOOSE US ================= -->
     <section class="py-16">
       <div class="max-w-7xl mx-auto px-6">
@@ -732,9 +727,6 @@
         </div>
       </div>
     </section>
-
-
-
 
 
     <!-- ================= REVIEWS ================= -->
@@ -780,56 +772,64 @@
 
   <!-- ================= MOBILE MENU SCRIPT ================= -->
   <script>
-    var menuBtn = document.getElementById("menuBtn");
-    var mobileMenu = document.getElementById("mobileMenu");
+    // ================= MOBILE MENU =================
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
 
-    menuBtn.addEventListener("click", function () {
-      mobileMenu.classList.toggle("hidden");
-    });
-    const date = document.getElementById("date").value;
-    const time = document.getElementById("time").value;
+    if (menuBtn) {
+      menuBtn.addEventListener("click", function () {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
 
-    // ================= BOOKING FORM SCRIPT =================
-    document.getElementById("bookingForm").addEventListener("submit", async function (e) {
+    // ================= BOOKING FORM =================
+    const bookingForm = document.getElementById("bookingForm");
+
+    bookingForm.addEventListener("submit", async function (e) {
       e.preventDefault();
 
       const data = {
         name: document.getElementById("name").value,
         phone: document.getElementById("phone").value,
         service: document.getElementById("service").value,
+        preferredDate: document.getElementById("date").value,
+        preferredTime: document.getElementById("time").value,
         address: document.getElementById("address").value
       };
 
       try {
-        const res = await fetch('http://localhost:3000/book-service', { // update URL if deployed
-          method: 'POST',
-          headers: {'Content-Type': 'application/json'},
+        const res = await fetch("http://localhost:8080/api/bookings", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify(data)
         });
 
-        const result = await res.json();
-
-        if (result.success) {
-          alert('Booking submitted successfully! Our technician will contact you.');
-          this.reset();
-
-          // Show success modal
-          const modal = document.getElementById("successModal");
-          modal.classList.remove("hidden");
-          modal.classList.add("flex");
+        if (res.ok) {
+          bookingForm.reset();
+          showSuccessModal();
         } else {
-          alert('Failed to submit booking. Try again later.');
+          alert("❌ Booking failed. Please try again.");
         }
+
       } catch (error) {
         console.error(error);
-        alert('Something went wrong. Please try again.');
+        alert("❌ Server not running. Please try later.");
       }
     });
 
-    // Close success modal function
+    // ================= SUCCESS MODAL =================
+    function showSuccessModal () {
+      const modal = document.getElementById("successModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    }
+
     function closeModal () {
       document.getElementById("successModal").classList.add("hidden");
     }
   </script>
+
 
 </html>
