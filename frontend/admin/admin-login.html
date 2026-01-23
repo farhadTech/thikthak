@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Login | ThikThak</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind Custom Theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: "#15803d"
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen bg-gradient-to-br from-green-50 to-white flex items-center justify-center px-4">
+
+  <!-- LOGIN CARD -->
+  <div class="w-full max-w-md bg-white rounded-2xl shadow-xl p-8
+              animate-slide-up">
+
+    <!-- LOGO -->
+    <div class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-green-700">ThikThak</h1>
+      <p class="text-gray-500 text-sm mt-1">Admin Dashboard Login</p>
+    </div>
+
+    <!-- ERROR -->
+    <p id="error"
+       class="hidden mb-4 text-sm text-red-600 text-center"></p>
+
+    <!-- FORM -->
+    <form id="loginForm" class="space-y-5">
+
+      <div>
+        <label class="text-sm font-medium text-gray-600">Username</label>
+        <input
+          type="text"
+          id="username"
+          required
+          class="w-full mt-1 px-4 py-3 rounded-xl border
+                 focus:outline-none focus:ring-2 focus:ring-green-600"
+          placeholder="admin"
+        />
+      </div>
+
+      <div>
+        <label class="text-sm font-medium text-gray-600">Password</label>
+        <input
+          type="password"
+          id="password"
+          required
+          class="w-full mt-1 px-4 py-3 rounded-xl border
+                 focus:outline-none focus:ring-2 focus:ring-green-600"
+          placeholder="••••••••"
+        />
+      </div>
+
+      <button
+        type="submit"
+        class="w-full bg-green-700 hover:bg-green-800
+               text-white py-3 rounded-xl font-semibold
+               transition duration-300">
+        Login
+      </button>
+    </form>
+
+    <!-- FOOTER -->
+    <p class="text-xs text-gray-400 text-center mt-6">
+      Authorized access only
+    </p>
+  </div>
+
+  <!-- ANIMATIONS -->
+  <style>
+    @keyframes slide-up {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-slide-up {
+      animation: slide-up 0.7s ease-out;
+    }
+  </style>
+
+  <!-- LOGIN SCRIPT -->
+  <script>
+    const form = document.getElementById("loginForm");
+    const errorEl = document.getElementById("error");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const res = await fetch("https://your-backend/admin/login", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({ username, password })
+        });
+
+        if (!res.ok) {
+          throw new Error("Invalid credentials");
+        }
+
+        const data = await res.json();
+        localStorage.setItem("token", data.token);
+
+        window.location.href = "/admin-dashboard.html";
+
+      } catch (err) {
+        errorEl.textContent = "Invalid username or password";
+        errorEl.classList.remove("hidden");
+      }
+    });
+  </script>
+
+</body>
+</html>

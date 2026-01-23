@@ -29,7 +29,7 @@ public class Booking {
     @Column(length = 500)
     private String address;
 
-    private String status; // NEW, CONFIRMED, COMPLETED
+    private String status = "PENDING"; // PENDING, CONFIRMED, COMPLETED
 
     private LocalDateTime createdAt;
 }
