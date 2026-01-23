@@ -455,6 +455,18 @@
               <option>Electrical & Electronics</option>
               <option>TV & Home Gadgets</option>
             </select>
+            <!-- Preferred Date -->
+            <input id="date" type="date" required
+              class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none transition">
+            <!-- Preferred Time -->
+            <select id="time" required
+              class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 focus:outline-none transition">
+              <option value="">Preferred Time</option>
+              <option>Morning (9am – 12pm)</option>
+              <option>Afternoon (12pm – 5pm)</option>
+              <option>Evening (5pm – 9pm)</option>
+            </select>
+
 
             <!-- Address -->
             <textarea id="address" placeholder="Your Address" required rows="3"
@@ -774,6 +786,8 @@
     menuBtn.addEventListener("click", function () {
       mobileMenu.classList.toggle("hidden");
     });
+    const date = document.getElementById("date").value;
+    const time = document.getElementById("time").value;
 
     // ================= BOOKING FORM SCRIPT =================
     document.getElementById("bookingForm").addEventListener("submit", async function (e) {
